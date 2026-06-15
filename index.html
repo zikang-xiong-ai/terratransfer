@@ -155,6 +155,12 @@
             <strong>action loss</strong> (KL) on the output action distribution. No logged ego
             trajectory is ever used as a supervision target.
           </p>
+          <p>
+            The two loss terms are also complementary: action-only reaches 0.319 and structural-only
+            0.307, but combined they reach <strong>0.490</strong>. The batch-wise subspace is itself
+            principled &mdash; at batch size 1024 it faithfully recovers the dominant teacher modes while
+            still separating small geometric scene perturbations (see appendix diagnostics).
+          </p>
         </div>
 
         <div class="columns is-vcentered" style="margin-top:1rem;">
@@ -219,12 +225,6 @@
                 </tbody>
               </table>
             </div>
-            <p class="is-size-7 has-text-grey has-text-centered">
-              The two loss terms are also complementary: action-only reaches 0.319 and structural-only
-              0.307, but combined they reach <strong>0.490</strong>. The batch-wise subspace is itself
-              principled &mdash; at batch size 1024 it faithfully recovers the dominant teacher modes while
-              still separating small geometric scene perturbations (see appendix diagnostics).
-            </p>
           </div>
         </div>
       </div>
